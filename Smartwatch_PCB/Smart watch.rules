@@ -1,0 +1,86 @@
+
+(rules PCB Smart watch
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 3200)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.2)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.8)
+    )
+  )
+  (rule
+    (width 200.0)
+    (clear 200.2)
+    (clear 100.0 (type smd_to_turn_gap))
+    (clear 50.0 (type smd_smd))
+  )
+  (padstack "Via[0-1]_600:400_um"
+    (shape
+      (circle F.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_600:400_um" "Via[0-1]_600:400_um" default
+  )
+  (via 
+    "Via[0-1]_600:400_um-kicad_default" "Via[0-1]_600:400_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_600:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_600:400_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    "Net-(ABS25-Pad1)" "Net-(ABS25-Pad2)" /3.3V "Net-(BT1-Pad10)" /RESET GND "Net-(BT1-Pad13)" "Net-(BT1-Pad14)"
+    "Net-(BT1-Pad15)" "Net-(BT1-Pad16)" "Net-(BT1-Pad8)" "Net-(BT1-Pad7)" "Net-(BT1-Pad6)" "Net-(BT1-Pad5)" "/USART_TX" "Net-(BT1-Pad3)"
+    "/USART_RX" "Net-(BT1-Pad1)" +5V "/BATT_OUT" "Net-(C5-Pad2)" "Net-(C14-Pad1)" "Net-(C15-Pad1)" "Net-(C18-Pad1)"
+    "/LCD_ON_OFF" /EXTCLCK "/SPI_CS" "/SPI1_MOSI" "/SPI1_SCK" "Net-(M1-Pad6)" "/I2C1_SDA" "/I2C1_SCL"
+    "Net-(MAX1-Pad4)" "/BATT_FULL" "Net-(P1-Pad2)" "Net-(P1-Pad3)" "Net-(P1-Pad5)" /TRST /TDI /TMS/SWDIO
+    /TCK/SWCLK "Net-(P2-Pad11)" /TDO/SWO "Net-(P2-Pad17)" "Net-(P2-Pad19)" "Net-(R2-Pad2)" "Net-(R3-Pad1)" "Net-(R10-Pad1)"
+    "Net-(R11-Pad2)" "Net-(R13-Pad1)" "Net-(S1-Pad3)" "Net-(S1-Pad4)" "Net-(UCL1-Pad17)" "Net-(UCL1-Pad25)" "Net-(UCL1-Pad26)" "Net-(UCL1-Pad27)"
+    "Net-(UCL1-Pad29)" "Net-(UCL1-Pad30)" "Net-(UCL1-Pad62)" "Net-(UCL1-Pad61)" "Net-(UCL1-Pad57)" "Net-(UCL1-Pad54)" "Net-(UCL1-Pad53)" "Net-(UCL1-Pad52)"
+    "Net-(UCL1-Pad51)" "Net-(UCL1-Pad15)" "Net-(UCL1-Pad14)" "Net-(UCL1-Pad11)" "Net-(UCL1-Pad10)" "Net-(UCL1-Pad9)" "Net-(UCL1-Pad2)" "Net-(UCL1-Pad33)"
+    "Net-(UCL1-Pad34)" "Net-(UCL1-Pad35)" "Net-(UCL1-Pad36)" "Net-(UCL1-Pad37)" "Net-(UCL1-Pad38)" "Net-(UCL1-Pad39)" "Net-(UCL1-Pad40)" "Net-(UCL1-Pad41)"
+    "Net-(UCL1-Pad44)" "Net-(UCL1-Pad45)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)

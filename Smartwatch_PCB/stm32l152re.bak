@@ -1,0 +1,162 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:smartWatchPower
+LIBS:stm32l152re
+LIBS:Smart watch-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 3
+Title "POWER SECTION"
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L STM32L152RE UCL1521
+U 1 1 55C40E1A
+P 4800 3850
+F 0 "UCL1521" H 4800 3900 60  0000 C CNN
+F 1 "STM32L152RE" H 4800 3800 60  0000 C CNN
+F 2 "" H 4850 3800 60  0000 C CNN
+F 3 "" H 4850 3800 60  0000 C CNN
+	1    4800 3850
+	1    0    0    -1  
+$EndComp
+Text Notes 4100 700  0    60   ~ 12
+MICROCONTROLLER STM32L152RE
+NoConn ~ 2500 2350
+NoConn ~ 2500 2550
+NoConn ~ 2500 4950
+$Comp
+L SW_PUSH SW1
+U 1 1 55C5D122
+P 1300 3850
+F 0 "SW1" H 1450 3960 50  0000 C CNN
+F 1 "RST_PUSH" H 1300 3770 50  0000 C CNN
+F 2 "" H 1300 3850 60  0000 C CNN
+F 3 "" H 1300 3850 60  0000 C CNN
+	1    1300 3850
+	0    1    1    0   
+$EndComp
+$Comp
+L C C4
+U 1 1 55C5D1A5
+P 1700 3850
+F 0 "C4" H 1725 3950 50  0000 L CNN
+F 1 "10nF" H 1725 3750 50  0000 L CNN
+F 2 "" H 1738 3700 30  0000 C CNN
+F 3 "" H 1700 3850 60  0000 C CNN
+	1    1700 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1050 3550 2500 3550
+Wire Wire Line
+	1700 3700 1700 3550
+Connection ~ 1700 3550
+Wire Wire Line
+	1300 4150 1700 4150
+Wire Wire Line
+	1700 4150 1700 4000
+$Comp
+L GND #PWR011
+U 1 1 55C5D209
+P 1500 4150
+F 0 "#PWR011" H 1500 3900 50  0001 C CNN
+F 1 "GND" H 1500 4000 50  0000 C CNN
+F 2 "" H 1500 4150 60  0000 C CNN
+F 3 "" H 1500 4150 60  0000 C CNN
+	1    1500 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R2
+U 1 1 55C5D348
+P 4100 1250
+F 0 "R2" V 4180 1250 50  0000 C CNN
+F 1 "10k" V 4100 1250 50  0000 C CNN
+F 2 "" V 4030 1250 30  0000 C CNN
+F 3 "" H 4100 1250 30  0000 C CNN
+	1    4100 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR012
+U 1 1 55C5D365
+P 4100 900
+F 0 "#PWR012" H 4100 650 50  0001 C CNN
+F 1 "GND" H 4100 750 50  0000 C CNN
+F 2 "" H 4100 900 60  0000 C CNN
+F 3 "" H 4100 900 60  0000 C CNN
+	1    4100 900 
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4100 1550 4100 1400
+Wire Wire Line
+	4100 1100 4100 900 
+$Comp
+L R R3
+U 1 1 55C5D774
+P 5500 6450
+F 0 "R3" V 5580 6450 50  0000 C CNN
+F 1 "10k" V 5500 6450 50  0000 C CNN
+F 2 "" V 5430 6450 30  0000 C CNN
+F 3 "" H 5500 6450 30  0000 C CNN
+	1    5500 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR013
+U 1 1 55C5D797
+P 5500 6750
+F 0 "#PWR013" H 5500 6500 50  0001 C CNN
+F 1 "GND" H 5500 6600 50  0000 C CNN
+F 2 "" H 5500 6750 60  0000 C CNN
+F 3 "" H 5500 6750 60  0000 C CNN
+	1    5500 6750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5500 6150 5500 6300
+Wire Wire Line
+	5500 6600 5500 6750
+NoConn ~ 1300 3550
+Connection ~ 1300 3550
+Text Label 1050 3550 2    60   ~ 0
+RESET
+$EndSCHEMATC
